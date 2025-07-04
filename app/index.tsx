@@ -13,6 +13,7 @@ function HomeScreen() {
         <Button title="API Call Demo" />
         <Button title="Gluestack Demo" />
         <Button title="Redux Demo" />
+        <Button title="Tailwind/NativeWind Demo" />
       </View>
     </View>
   );
