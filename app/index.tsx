@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-
+    width: '100%',
+    paddingHorizontal: 20,
+    marginTop: 20,
+    gap: 12,
   }
 })
