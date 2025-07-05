@@ -1,37 +1,52 @@
+import CalculateBmi from "@/components/GetBmi";
+import UserForm from "@/components/UserForm";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button, StyleSheet, Text, View } from "react-native";
 
+const Stack = createNativeStackNavigator();
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Welcome to the App</Text>
+      <Text style={styles.title}>Welcome to the App</Text>
       <View style={styles.buttonContainer}>
-        <Button title="Go to User Form" />
-        <Button title="Play Single Video" />        {/* user can enter url or if !url, play the existing url video */}
-        <Button title="Videos List" />
-        <Button title="Calculate BMI" />
-        <Button title="API Call Demo" />
-        <Button title="Gluestack Demo" />
-        <Button title="Redux Demo" />
-        <Button title="Tailwind/NativeWind Demo" />
+        <Button title="Go to User Form" onPress={() => navigation.navigate('User Form')} />
+        <Button title="Play Single Video" onPress={() => navigation.navigate()} />        {/* user can enter url or if !url, play the existing url video */}
+        <Button title="Videos List" onPress={() => navigation.navigate()} />
+        <Button title="Calculate BMI" onPress={() => navigation.navigate('Calculate BMI')} />
+        <Button title="API Call Demo" onPress={() => navigation.navigate()} />
+        <Button title="Gluestack Demo" onPress={() => navigation.navigate()} />
+        <Button title="Redux Demo" onPress={() => navigation.navigate()} />
+        <Button title="Tailwind/NativeWind Demo" onPress={() => navigation.navigate()} />
       </View>
     </View>
   );
 }
 
 export default function Index() {
-
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="User Form" component={UserForm} />
+      <Stack.Screen name="Calculate BMI" component={CalculateBmi} />
+    </Stack.Navigator>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    backgroundColor: '#222',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
   },
 
   title: {
-
+    color: 'white',
+    fontSize: 24,
+    marginBottom: 20,
+    padding: 12
   },
 
   buttonContainer: {
