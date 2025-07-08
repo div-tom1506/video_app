@@ -1,3 +1,4 @@
+import ApiCall from "@/components/ApiCallDemo";
 import CalculateBmi from "@/components/GetBmi";
 import UserForm from "@/components/UserForm";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -14,7 +15,7 @@ function HomeScreen({ navigation }) {
         <Button title="Play Single Video" onPress={() => navigation.navigate()} />        {/* user can enter url or if !url, play the existing url video */}
         <Button title="Videos List" onPress={() => navigation.navigate()} />
         <Button title="Calculate BMI" onPress={() => navigation.navigate('Calculate BMI')} />
-        <Button title="API Call Demo" onPress={() => navigation.navigate()} />
+        <Button title="API Call Demo" onPress={() => navigation.navigate('API Demo')} />
         <Button title="Gluestack Demo" onPress={() => navigation.navigate()} />
         <Button title="Redux Demo" onPress={() => navigation.navigate()} />
         <Button title="Tailwind/NativeWind Demo" onPress={() => navigation.navigate()} />
@@ -29,6 +30,7 @@ export default function Index() {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="User Form" component={UserForm} />
       <Stack.Screen name="Calculate BMI" component={CalculateBmi} />
+      <Stack.Screen name="API Demo" component={ApiCall} />
     </Stack.Navigator>
   )
 }
