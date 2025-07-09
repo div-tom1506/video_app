@@ -1,5 +1,6 @@
 import ApiCall from "@/components/ApiCallDemo";
 import CalculateBmi from "@/components/GetBmi";
+import SingleVideo from "@/components/SingleVideo";
 import UserForm from "@/components/UserForm";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button, StyleSheet, Text, View } from "react-native";
@@ -12,7 +13,7 @@ function HomeScreen({ navigation }) {
       <Text style={styles.title}>Welcome to the App</Text>
       <View style={styles.buttonContainer}>
         <Button title="Go to User Form" onPress={() => navigation.navigate('User Form')} />
-        <Button title="Play Single Video" onPress={() => navigation.navigate()} />        {/* user can enter url or if !url, play the existing url video */}
+        <Button title="Play Single Video" onPress={() => navigation.navigate('Single Video')} />        {/* user can enter url or if !url, play the existing url video */}
         <Button title="Videos List" onPress={() => navigation.navigate()} />
         <Button title="Calculate BMI" onPress={() => navigation.navigate('Calculate BMI')} />
         <Button title="API Call Demo" onPress={() => navigation.navigate('API Demo')} />
@@ -31,6 +32,7 @@ export default function Index() {
       <Stack.Screen name="User Form" component={UserForm} />
       <Stack.Screen name="Calculate BMI" component={CalculateBmi} />
       <Stack.Screen name="API Demo" component={ApiCall} />
+      <Stack.Screen name="Single Video" component={SingleVideo} />
     </Stack.Navigator>
   )
 }
