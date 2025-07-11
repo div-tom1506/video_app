@@ -74,9 +74,11 @@ function ApiCall() {
 
             {getData && !isError(getData) && (
                 <>
-                    <Text style={styles.result}>User Id: {getData.userId}</Text>
-                    <Text style={styles.result}>Title: {getData.title}</Text>
-                    <Text style={styles.result}>Body: {getData.body}</Text>
+                    <Text style={styles.result}>
+                        User Id: {getData.userId}{"\n\n"}
+                        Title: {getData.title}{"\n\n"}
+                        Body: {getData.body}
+                    </Text>
                 </>
             )}
             {getData && isError(getData) && (
